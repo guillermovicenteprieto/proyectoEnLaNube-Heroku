@@ -35,7 +35,7 @@ app.use(session({
   rolling: true,
   cookie: {
     httpOnly: false,
-    secure: true,
+    secure: false,
     maxAge: Number(process.env.EXPIRATION_TIME) || 60 * 60 * 1000
   },
 }));
