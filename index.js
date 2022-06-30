@@ -7,7 +7,7 @@ import passport from "passport";
 import dotenv from "dotenv";
 dotenv.config();
 import "./src/database.js";
-import { PORT } from "./src/utils/port.js";
+//import { PORT } from "./src/utils/port.js";
 import { routerInfo, routerHandlebars } from "./src/routes/routes.js";
 import { loginStrategy, signupStrategy } from "./src/middlewares/passportLocal.js";
 import compression from "compression";
@@ -35,7 +35,7 @@ app.use(session({
   rolling: true,
   cookie: {
     httpOnly: false,
-    secure: false,
+    secure: true,
     maxAge: Number(process.env.EXPIRATION_TIME) || 60 * 60 * 1000
   },
 }));
@@ -70,7 +70,7 @@ app.get('*', (req, res) => {
 });
 
 /*============================[Servidor]============================*/
-//const PORT = process.env.PORT;
+const PORT = process.env.PORT;
 if (serverMode == "CLUSTER") {
   logger.info(`Primary: ${process.pid}`)
   for (let i = 0; i < numCPUs; i++) {
