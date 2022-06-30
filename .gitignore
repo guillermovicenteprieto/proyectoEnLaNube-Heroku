@@ -1,0 +1,9 @@
+nginx-1.21.6
+nginx
+logsData
+compression
+autocannon
+.env
+node_modules
+server.js
+benchmark.js
