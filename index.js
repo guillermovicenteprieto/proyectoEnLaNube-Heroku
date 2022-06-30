@@ -37,7 +37,7 @@ app.use(session({
     httpOnly: false,
     secure: false,
     maxAge: Number(process.env.EXPIRATION_TIME) || 60 * 60 * 1000
-},
+  },
 }));
 
 passport.use('login', loginStrategy);
