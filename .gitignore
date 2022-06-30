@@ -3,6 +3,7 @@ nginx
 logsData
 compression
 autocannon
+node built-in profiler
 .env
 node_modules
 server.js
